@@ -1,0 +1,8 @@
+Package: com.linusyang.chineseconv
+Name: Chinese Converter
+Depends: actionmenu, com.rpetrich.rocketbootstrap | firmware (<< 7.0), mobilesubstrate, firmware (>= 5.0)
+Version: 0.3
+Architecture: iphoneos-arm
+Description: action menu plugin for conversion to traditional chinese
+Author: Linus Yang <laokongzi@gmail.com>
+Section: Addons
