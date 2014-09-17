@@ -25,6 +25,9 @@
     if ([selection length] == 0) {
         return NO;
     }
+    if ([[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.apple.springboard"]) {
+        return NO;
+    }
     if (![self canPerformAction:@selector(paste:) withSender:sender]) {
         return NO;
     }
