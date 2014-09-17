@@ -12,7 +12,11 @@
 
 + (void)load
 {
-    [[UIMenuController sharedMenuController] registerAction:@selector(performAction:) title:@"Han" canPerform:@selector(canPerformAction:)];
+    NSString *title = @"Han";
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] hasPrefix:@"zh"]) {
+        title = @"漢";
+    }
+    [[UIMenuController sharedMenuController] registerAction:@selector(performAction:) title:title canPerform:@selector(canPerformAction:)];
 }
 
 - (BOOL)canPerformAction:(id)sender
