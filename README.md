@@ -10,6 +10,8 @@ Copyright (c) 2014 Linus Yang
 
 Install it in Cydia by adding repo http://yangapp.googlecode.com/svn.
 
+To toggle the pop-up menu, go to *Settings - Action Menu - ChineseConv*.
+
 ## Build
 ```bash
 git clone --recursive https://github.com/linusyang/ChineseConv.git
