@@ -31,7 +31,7 @@
     if (![self canPerformAction:@selector(paste:) withSender:sender]) {
         return NO;
     }
-    NSRegularExpression *chineseRegex = [NSRegularExpression regularExpressionWithPattern:@"[\u4e00-\u9fa5]" options:0 error:nil];
+    NSRegularExpression *chineseRegex = [NSRegularExpression regularExpressionWithPattern:@"[\\u4e00-\\u9fa5]" options:0 error:nil];
     NSRange range = [chineseRegex rangeOfFirstMatchInString:selection options:0 range:NSMakeRange(0, selection.length)];
     return range.location != NSNotFound;
 }
