@@ -4,8 +4,8 @@
 #import <rocketbootstrap.h>
 
 @interface UIResponder (ChineseConv)
-- (BOOL)canPerformAction:(id)sender;
-- (void)performAction:(id)sender;
+- (BOOL)canPerformChineseConvAction:(id)sender;
+- (void)performChineseConvAction:(id)sender;
 @end
 
 @implementation UIResponder (ChineseConv)
@@ -16,10 +16,10 @@
     if ([[[NSLocale preferredLanguages] objectAtIndex:0] hasPrefix:@"zh"]) {
         title = @"漢";
     }
-    [[UIMenuController sharedMenuController] registerAction:@selector(performAction:) title:title canPerform:@selector(canPerformAction:)];
+    [[UIMenuController sharedMenuController] registerAction:@selector(performChineseConvAction:) title:title canPerform:@selector(canPerformChineseConvAction:)];
 }
 
-- (BOOL)canPerformAction:(id)sender
+- (BOOL)canPerformChineseConvAction:(id)sender
 {
     NSString *selection = [self selectedTextualRepresentation];
     if ([selection length] == 0) {
@@ -36,7 +36,7 @@
     return range.location != NSNotFound;
 }
 
-- (void)performAction:(id)sender
+- (void)performChineseConvAction:(id)sender
 {
     NSString *selection = [self selectedTextualRepresentation];
     CPDistributedMessagingCenter *center = [CPDistributedMessagingCenter centerNamed:@"com.linusyang.opencc"];
